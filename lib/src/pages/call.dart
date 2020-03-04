@@ -65,7 +65,7 @@ class _CallPageState extends State<CallPage> {
   void _addAgoraEventHandlers() {
     AgoraRtcEngine.onError = (dynamic code) {
       setState(() {
-        final info = 'onError: $code';
+        final info = 'onErrora: $code';
         _infoStrings.add(info);
       });
     };
@@ -154,8 +154,8 @@ class _CallPageState extends State<CallPage> {
         return Container(
             child: Column(
           children: <Widget>[
-            _expandedVideoRow([views[0]]),
-            _expandedVideoRow([views[1]])
+           // _expandedVideoRow([views[0]]), //CLT
+            _expandedVideoRow([views[1]]) // FSS
           ],
         ));
       case 3:

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './src/pages/index.dart';
 import 'src/pages/index.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(new MyApp());
+  });
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -92,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 25,
                       )),
                 ),
-                Padding(padding: EdgeInsets.all(5.0),),
+                Padding(padding: EdgeInsets.all(10.0),),
                 Container(
                   child: ButtonTheme(
                     minWidth: 1.0,
